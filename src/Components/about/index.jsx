@@ -150,30 +150,41 @@ export default function About() {
           </SectionTitle>
 
           <AboutParagraph>
-            Sou Rafael, Psicólogo Clínico, e atuo na escuta psicanalítica desde
-            2015. Ofereço um espaço seguro, ético e acolhedor, onde a palavra
-            pode circular com liberdade, amparada pelo sigilo profissional e por
-            uma escuta atenta.
+            Olá! Sou Rafael Richard, psicólogo especialista no tratamento de
+            ansiedade, depressão e outros sintomas e estou aqui para te ajudar a
+            enfrentar esses desafios sempre com acolhimento e compreensão.
           </AboutParagraph>
 
           <AboutParagraph>
-            Venho acompanhando histórias humanas complexas, frágeis e, ao mesmo
-            tempo, potentes. Minha prática é sustentada pela psicanálise
-            freudiana e lacaniana, com atenção à singularidade de cada sujeito —
-            sem julgamentos, sem respostas prontas.
+            Meu trabalho é criar um ambiente seguro e sem julgamentos para que
+            você possa explorar seus sentimentos e pensamentos e fazer com que o
+            tratamento seja o mais eficaz e humanizado possível.
           </AboutParagraph>
 
-          <Quote>
-            "Ser completamente honesto consigo mesmo é um bom exercício." –
-            Sigmund Freud
-          </Quote>
+          <AboutParagraph>
+            Sou formado pela Unitri em Uberlândia Minas Gerais, e minha
+            abordagem é a humanista-existencial, essa linha vê o cliente além de
+            seu sintoma, vê como uma pessoa digna de sua história.
+          </AboutParagraph>
+          <AboutParagraph>
+            Aprendi nesses anos de estudo a acreditar na capacidade de cada um
+            em lidar com as dificuldades e se reinventar.
+          </AboutParagraph>
+          <AboutParagraph>
+            Além disso, prezo pela ciência e o que há de mais moderno no
+            tratamento de cada caso. Utilizarei das melhores técnicas da ciência
+            para te ajudar.
+          </AboutParagraph>
+          <AboutParagraph>
+            O atendimento é online, podendo ser feito até pelo celular, o que
+            torna o processo prático e acessível adaptando-se à sua rotina.
+          </AboutParagraph>
 
           <AboutParagraph>
-            Acredito que a escuta é, acima de tudo, uma forma profunda de
-            presença. Quando o sofrimento encontra lugar para ser dito, pode,
-            aos poucos, ser transformado. Na clínica, construí um espaço onde
-            essa elaboração é possível: uma escuta ética, crítica e sensível,
-            que acolhe o que precisa ser nomeado e ressignificado.
+            Juntos, vamos construir uma conexão de confiança, essencial para
+            você se autoconhecer, desenvolver ferramentas eficazes para
+            gerenciar seus sintomas e, finalmente, encontrar mais equilíbrio e
+            bem-estar.
           </AboutParagraph>
         </TextContent>
         <ImageWrapper>

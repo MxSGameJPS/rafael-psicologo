@@ -1,6 +1,6 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 import styled from "styled-components";
-import emailjs from "@emailjs/browser";
+import { useForm, ValidationError } from "@formspree/react";
 import { FaPaperPlane, FaWhatsapp, FaCheck } from "react-icons/fa";
 
 const CtaContainer = styled.section`
@@ -178,6 +178,18 @@ const StatusMessage = styled.div`
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
+  animation: fadeIn 0.3s ease-in-out;
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 
   &.success {
     background-color: rgba(37, 211, 102, 0.1);
@@ -190,18 +202,36 @@ const StatusMessage = styled.div`
   }
 `;
 
+const FormValidationMessage = styled.span`
+  color: #ff5757;
+  font-size: 0.8rem;
+  margin-top: 0.3rem;
+  display: block;
+`;
+
+const LoadingSpinner = styled.div`
+  display: inline-block;
+  width: 1.2rem;
+  height: 1.2rem;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s ease-in-out infinite;
+
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+`;
+
 export default function Cta() {
-  const [formStatus, setFormStatus] = useState({
-    submitting: false,
-    status: null, // 'success' | 'error' | null
-  });
+  const [state, handleSubmit] = useForm("manjpgdk"); // Use o ID do seu formulário do Formspree aqui
   const [formData, setFormData] = useState({
     nome: "",
     email: "",
     mensagem: "",
   });
-
-  const formRef = useRef();
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -211,37 +241,21 @@ export default function Cta() {
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setFormStatus({ submitting: true, status: null });
-
-    // Substitua estes IDs pelos seus IDs do EmailJS
-    const serviceId = "service_emailjs";
-    const templateId = "template_contato";
-    const publicKey = "sua_chave_publica";
-
-    emailjs
-      .sendForm(serviceId, templateId, formRef.current, publicKey)
-      .then((result) => {
-        console.log("Email enviado com sucesso:", result.text);
-        setFormStatus({ submitting: false, status: "success" });
-        // Limpar o formulário
-        setFormData({
-          nome: "",
-          email: "",
-          mensagem: "",
-        });
-
-        // Resetar a mensagem de sucesso após 5 segundos
-        setTimeout(() => {
-          setFormStatus({ submitting: false, status: null });
-        }, 5000);
-      })
-      .catch((error) => {
-        console.error("Erro ao enviar email:", error);
-        setFormStatus({ submitting: false, status: "error" });
-      });
+  const resetForm = () => {
+    setFormData({
+      nome: "",
+      email: "",
+      mensagem: "",
+    });
   };
+
+  // Se o formulário for enviado com sucesso e não está em estado de submissão
+  if (state.succeeded && !state.submitting) {
+    // Resetar o formulário após o envio bem-sucedido
+    setTimeout(() => {
+      resetForm();
+    }, 3000);
+  }
 
   return (
     <CtaContainer id="contato">
@@ -255,7 +269,7 @@ export default function Cta() {
         </SectionText>
 
         <FormContainer>
-          <Form ref={formRef} onSubmit={handleSubmit}>
+          <Form onSubmit={handleSubmit}>
             <InputGroup>
               <Label htmlFor="nome">Nome</Label>
               <Input
@@ -266,6 +280,12 @@ export default function Cta() {
                 onChange={handleInputChange}
                 placeholder="Seu nome completo"
                 required
+              />
+              <ValidationError
+                prefix="Nome"
+                field="nome"
+                errors={state.errors}
+                component={FormValidationMessage}
               />
             </InputGroup>
 
@@ -280,6 +300,12 @@ export default function Cta() {
                 placeholder="seu.email@exemplo.com"
                 required
               />
+              <ValidationError
+                prefix="Email"
+                field="email"
+                errors={state.errors}
+                component={FormValidationMessage}
+              />
             </InputGroup>
 
             <InputGroup>
@@ -292,11 +318,19 @@ export default function Cta() {
                 placeholder="Como posso ajudar? Conte um pouco sobre o que está buscando..."
                 required
               />
+              <ValidationError
+                prefix="Mensagem"
+                field="mensagem"
+                errors={state.errors}
+                component={FormValidationMessage}
+              />
             </InputGroup>
 
-            <SubmitButton type="submit" disabled={formStatus.submitting}>
-              {formStatus.submitting ? (
-                "Enviando..."
+            <SubmitButton type="submit" disabled={state.submitting}>
+              {state.submitting ? (
+                <>
+                  <LoadingSpinner /> Enviando...
+                </>
               ) : (
                 <>
                   Enviar mensagem <FaPaperPlane />
@@ -304,23 +338,21 @@ export default function Cta() {
               )}
             </SubmitButton>
 
-            {formStatus.status === "success" && (
+            {state.succeeded && (
               <StatusMessage className="success">
                 <FaCheck /> Mensagem enviada com sucesso!
               </StatusMessage>
             )}
 
-            {formStatus.status === "error" && (
+            {state.errors && state.errors.length > 0 && (
               <StatusMessage className="error">
                 Erro ao enviar. Por favor, tente novamente ou use o WhatsApp.
               </StatusMessage>
             )}
           </Form>
-
           <OrDivider>
             <span>ou</span>
           </OrDivider>
-
           <WhatsappButton
             href="https://wa.me/+5534992913300?text=Olá!%20Gostaria%20de%20agendar%20uma%20consulta."
             target="_blank"

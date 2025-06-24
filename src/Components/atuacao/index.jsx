@@ -222,7 +222,7 @@ export default function Atuacao() {
   ];
   return (
     <AtuacaoContainer id="atuacao">
-      <SectionTitle>Atuo como Psicólogo há mais de 10 anos</SectionTitle>
+      <SectionTitle>Atuo como Psicólogo Clínico</SectionTitle>
       <SectionSubtitle>oferecendo suporte especializado para:</SectionSubtitle>
       <AreasGrid>
         {areas.map((area, index) => (

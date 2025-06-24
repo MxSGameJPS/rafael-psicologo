@@ -131,7 +131,7 @@ export default function Footer() {
           </FooterText>
           <SocialLinks>
             <a
-              href="https://www.instagram.com/"
+              href="https://www.instagram.com/psi_rafaelrichard"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -168,11 +168,11 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <a href="mailto:contato@rafaelsilva.com.br">
-                Email: contato@rafaelsilva.com.br
+              <a href="mailto:rrddmor@gmail.com">
+                Email: rrddmor@gmail.com
               </a>
             </li>
-            <li>CRP: 06/XXXXX</li>
+            <li>CRP: 04/81560</li>
             <li>Atendimento Online para todo o Brasil</li>
           </ContactList>
         </FooterSection>
@@ -181,7 +181,7 @@ export default function Footer() {
       <Divider />
 
       <Copyright>
-        &copy; {currentYear} Rafael Silva - Psicólogo | Todos os direitos
+        &copy; {currentYear} Rafael Richard - Psicólogo | Todos os direitos
         reservados
       </Copyright>
     </FooterContainer>
