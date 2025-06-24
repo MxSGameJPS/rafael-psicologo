@@ -15,7 +15,7 @@ export default function Hero() {
         <HeroTitle>Atendimento Psicológico</HeroTitle>{" "}
         <HeroDescription>
           Um espaço de <Highlight>escuta atenta e ética</Highlight>, onde você
-          pode compreender melhor suas dores e encontrar novos caminhos. Cuidar
+          pode compreender melhor suas dores e encontrar novos caminhos. <br />Cuidar
           de si é um processo que começa pela palavra.
         </HeroDescription>
         

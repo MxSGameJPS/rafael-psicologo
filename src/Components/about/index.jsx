@@ -186,6 +186,11 @@ export default function About() {
             gerenciar seus sintomas e, finalmente, encontrar mais equilíbrio e
             bem-estar.
           </AboutParagraph>
+
+          <Quote>
+            "Cada pessoa tem uma história única e merece ser tratada com
+            respeito absoluto, sigilo e atenção a sua singularidade"
+          </Quote>
         </TextContent>
         <ImageWrapper>
           <img src="/com-terno.png" alt="Rafael Silva - Psicólogo" />
