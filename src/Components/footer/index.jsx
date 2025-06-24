@@ -121,7 +121,7 @@ export default function Footer() {
       <FooterContent>
         <FooterSection>
           <Logo>
-            Rafael Silva
+            Rafael Richard
             <span>Psicólogo Clínico</span>
           </Logo>
           <FooterText>
@@ -138,7 +138,7 @@ export default function Footer() {
               <FaInstagram size={20} />
             </a>
             <a
-              href="https://wa.me/5511999999999?text=Olá!%20Vim%20pelo%20site%20e%20quero%20saber%20mais."
+              href="https://wa.me/+5534992913300?text=Olá!%20Gostaria%20de%20agendar%20uma%20consulta."
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -160,11 +160,11 @@ export default function Footer() {
           <ContactList>
             <li>
               <a
-                href="https://wa.me/5511999999999?text=Olá!%20Vim%20pelo%20site%20e%20quero%20saber%20mais."
+                href="https://wa.me/+5534992913300?text=Olá!%20Gostaria%20de%20agendar%20uma%20consulta."
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                WhatsApp: (11) 99999-9999
+                WhatsApp: (34) 99291-3300
               </a>
             </li>
             <li>

@@ -145,7 +145,7 @@ export default function About() {
       <AboutContent>
         <TextContent>
           <SectionTitle>
-            Rafael Silva
+            Rafael Richard
             <span>Psicólogo Clínico</span>
           </SectionTitle>
 

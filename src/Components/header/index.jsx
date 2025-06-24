@@ -76,7 +76,7 @@ export default function Header() {
       </LogoWrapper>
       <Nav>
         <NavLink href="#sobre">Sobre</NavLink>
-        <NavLink href="#atuacao">Áreas de Atuação</NavLink>
+        <NavLink href="#atuacao">Atuação</NavLink>
         <NavLink href="#depoimentos">Depoimentos</NavLink>
         <NavLink href="#contato">Contato</NavLink>
       </Nav>

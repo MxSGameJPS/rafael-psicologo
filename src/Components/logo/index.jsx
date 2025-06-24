@@ -35,7 +35,7 @@ export default function Logo({ size, color }) {
     <LogoContainer>
       <LogoText size={size} color={color}>
         <Title>
-          Dr<Dot>.</Dot> Rafael
+          Rafael
         </Title>
         <Subtitle>Richard</Subtitle>
       </LogoText>
