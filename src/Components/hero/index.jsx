@@ -22,7 +22,7 @@ export default function Hero() {
         <ButtonsContainer>
           {" "}
           <WhatsAppButton
-            href="https://wa.me/5511999999999?text=Olá!%20Vim%20pelo%20site%20e%20quero%20saber%20mais."
+             href="https://wa.me/+5534992913300?text=Olá!%20Gostaria%20de%20agendar%20uma%20consulta."
             target="_blank"
             rel="noopener noreferrer"
           >
