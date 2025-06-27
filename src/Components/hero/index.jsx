@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { FaWhatsapp } from "react-icons/fa";
 import Logo from "../logo";
 
-
 export default function Hero() {
   return (
     <HeroContainer>
@@ -15,14 +14,13 @@ export default function Hero() {
         <HeroTitle>Atendimento Psicológico</HeroTitle>{" "}
         <HeroDescription>
           Um espaço de <Highlight>escuta atenta e ética</Highlight>, onde você
-          pode compreender melhor suas dores e encontrar novos caminhos. <br />Cuidar
-          de si é um processo que começa pela palavra.
+          pode compreender melhor suas dores e encontrar novos caminhos. <br />
+          Você não está só. E não precisa mais enfrentar tudo em silêncio. 
         </HeroDescription>
-        
         <ButtonsContainer>
           {" "}
           <WhatsAppButton
-             href="https://wa.me/+5534992913300?text=Olá!%20Gostaria%20de%20agendar%20uma%20consulta."
+            href="https://wa.me/+5534992913300?text=Olá!%20Gostaria%20de%20agendar%20uma%20consulta."
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -38,6 +36,9 @@ export default function Hero() {
           src="/sem-terno.png"
           alt="Dr. Rafael Richard - Psicólogo"
         />
+      <Quote>
+        "Cuidar de si é um processo que começa pela palavra."
+      </Quote>
       </ImageContainer>
     </HeroContainer>
   );
@@ -221,6 +222,7 @@ const ImageContainer = styled.div`
   flex: 0.7;
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
   margin-left: 1.5rem;
   position: relative;
@@ -273,4 +275,18 @@ const Highlight = styled.span`
   font-weight: 700;
 `;
 
+const Quote = styled.blockquote`
+  font-style: italic;
+  color: #7b68ee; /* Lavanda */
+  border-left: 3px solid #ffd8bf; /* Pêssego claro */
+  padding-left: 1.5rem;
+  margin: 2rem 0;
+  font-size: 1.1rem;
+  background-color: rgba(255, 216, 191, 0.1); /* Pêssego bem claro */
+  padding: 1.5rem;
+  border-radius: 0 10px 10px 0;
 
+  @media (max-width: 992px) {
+    text-align: left;
+  }
+`;
